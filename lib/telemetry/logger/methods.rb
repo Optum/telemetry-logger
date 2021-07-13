@@ -1,26 +1,14 @@
 module Telemetry
   module Logger
     module Methods
-      def opts
-        @opts ||= {}
-      end
-
       def colorize
-        opts[:color] || opts[:logfile].is_a?(String) || true
-      end
-
-      def trace(raw_message = nil, size: @trace_size, log_caller: true) # rubocop:disable  Metrics/AbcSize
-        return unless @trace_enabled
-
-        raw_message = yield if raw_message.nil? && block_given?
-        message = Rainbow('Tracing: ').cyan
-        message.concat Rainbow("#{raw_message} ").cyan
-        if log_caller && size.nil?
-          message.concat Rainbow(caller_locations).cyan.underline
-        elsif log_caller
-          message.concat Rainbow(caller_locations[0..size]).cyan.underline
-        end
-        log.unknown(message)
+        @colorize ||= if opts[:logfile].is_a?(String)
+                        false
+                      elsif opts.key? :color
+                        opts[:color]
+                      else
+                        true
+                      end
       end
 
       def debug(message = nil)

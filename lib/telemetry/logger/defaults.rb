@@ -1,3 +1,5 @@
+require 'socket'
+
 module Telemetry
   module Logger
     module Defaults
@@ -6,15 +8,19 @@ module Telemetry
       end
 
       def env_prefix
-        @opts[:env_prefix] || 'telemetry'
+        opts[:env_prefix] || 'telemetry'
       end
 
       def application
-        opts.key?(:application) ? @opts[:application] : 'telemetry'
+        opts[:application] || 'telemetry'
       end
 
       def app_version
-        opts.key?(:app_version) ? @opts[:app_version] : Telemetry::Telemetry::VERSION
+        opts[:app_version] || Telemetry::Logger::VERSION
+      end
+
+      def opts
+        @opts ||= {}
       end
     end
   end
