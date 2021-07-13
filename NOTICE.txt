@@ -1,9 +1,9 @@
-<Insert Project Name Here>
+Telemetry::Logger
 Copyright 2021 Optum
 
 Project Description:
 ====================
-<Short description of your project>
+A generic gem to handle logging for all other telemetry gems
 
 Author(s):
-<List the names and GitHub IDs of the original project authors>
+Esity
