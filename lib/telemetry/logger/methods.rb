@@ -1,3 +1,5 @@
+require 'rainbow'
+
 module Telemetry
   module Logger
     module Methods
@@ -15,7 +17,7 @@ module Telemetry
         return unless log.level < 1
 
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).blue if @color
+        message = Rainbow(message).blue if colorize
         log.debug(message)
       end
 
@@ -23,7 +25,7 @@ module Telemetry
         return unless log.level < 2
 
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).green if @color
+        message = Rainbow(message).green if colorize
         log.info(message)
       end
 
@@ -31,7 +33,7 @@ module Telemetry
         return unless log.level < 3
 
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).yellow if @color
+        message = Rainbow(message).yellow if colorize
         log.warn(message)
       end
 
@@ -39,7 +41,7 @@ module Telemetry
         return unless log.level < 4
 
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).red if @color
+        message = Rainbow(message).red if colorize
         log.error(message)
       end
 
@@ -47,13 +49,13 @@ module Telemetry
         return unless log.level < 5
 
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).darkred if @color
+        message = Rainbow(message).darkred if colorize
         log.fatal(message)
       end
 
       def unknown(message = nil)
         message = yield if message.nil? && block_given?
-        message = Rainbow(message).purple if @color
+        message = Rainbow(message).purple if colorize
         log.unknown(message)
       end
 
