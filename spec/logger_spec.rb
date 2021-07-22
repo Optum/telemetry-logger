@@ -38,4 +38,9 @@ RSpec.describe Telemetry::Logger do
   it 'should be able to log unknown' do
     expect { Telemetry::Logger.unknown('testing') }.to output(/ANY/).to_stdout_from_any_process
   end
+
+  it 'should be able to setup and set the level' do
+    expect(Telemetry::Logger.setup(level: 'warn').level).to eq 2
+    expect(Telemetry::Logger.setup(level: 'error').level).to eq 3
+  end
 end
