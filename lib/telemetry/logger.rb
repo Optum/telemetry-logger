@@ -13,6 +13,7 @@ module Telemetry
       def setup(level: 'info', **opts)
         output(**opts)
         self.log_level = level
+        self
       end
     end
   end
