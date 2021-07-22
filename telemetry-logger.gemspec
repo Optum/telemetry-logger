@@ -24,9 +24,6 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'concurrent-ruby', '>= 1.1.7'
-  spec.add_dependency 'concurrent-ruby-ext', '>= 1.1.7'
   spec.add_dependency 'multi_json'
-  spec.add_dependency 'oj', '>= 3.11'
   spec.add_dependency 'rainbow', '~> 3'
 end
