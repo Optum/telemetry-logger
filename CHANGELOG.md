@@ -1,5 +1,9 @@
 # Telemetry::Logger
 
+## v0.2.1 - Pending
+* Adding more metadata properties to gemspec
+* Adding development dependency for `code-scanning-rubocop`
+
 ## v0.2.0
 * Adding new module called `Telemetry::Logger::ExceptionHandler`
 * Adding methods for `exception` and magic for detecting `ElasticAPM` and `OpenTelemetry`
