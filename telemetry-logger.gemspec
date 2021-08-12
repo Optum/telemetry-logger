@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/Optum/telemetry-logger'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/Optum/telemetry-logger/issues'
   spec.metadata['changelog_uri'] = 'https://github.com/Optum/telemetry-logger/blob/main/CHANGELOG.md'
+  spec.metadata['github_repo'] = 'https://github.com/Optum/telemetry-logger'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
