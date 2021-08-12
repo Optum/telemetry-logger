@@ -3,6 +3,7 @@
 ## v0.2.0
 * Adding new module called `Telemetry::Logger::ExceptionHandler`
 * Adding methods for `exception` and magic for detecting `ElasticAPM` and `OpenTelemetry`
+* Adding `Upload Sarif output` step to `rubocop` GitHub action
 
 ## v0.1.1
 * Fixing issue with color option using the wrong method name
